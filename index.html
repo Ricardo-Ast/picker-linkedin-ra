@@ -7,360 +7,181 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --teal: #29BFDB;
-  --teal2: #1DA5BE;
-  --navy: #0D1B2A;
-  --navy2: #152232;
-  --navy3: #1E3045;
-  --text: #1A202C;
-  --sub: #4A5568;
-  --muted: #718096;
-  --border: #E2E8F0;
-  --light: #F7FAFC;
-  --green: #2F9E6E;
-  --amber: #D4870A;
+  --teal: #29BFDB; --teal2: #1DA5BE; --navy: #0D1B2A; --navy2: #152232; --navy3: #1E3045;
+  --text: #1A202C; --sub: #4A5568; --muted: #718096; --border: #E2E8F0; --light: #F7FAFC;
 }
+body { font-family: 'Montserrat', sans-serif; background: #EEF2F7; color: var(--text); }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #EEF2F7;
-  color: var(--text);
-}
-
-/* ── HERO ─────────────────────────────────────────── */
+/* HERO */
 .hero {
   background: linear-gradient(160deg, #0D1B2A 0%, #152A3E 55%, #0A2540 100%);
-  padding: 56px 48px 48px;
-  position: relative;
-  overflow: hidden;
+  padding: 56px 48px 48px; position: relative; overflow: hidden;
 }
 .hero::before {
-  content: '';
-  position: absolute;
-  width: 500px; height: 500px;
+  content: ''; position: absolute; width: 500px; height: 500px;
   background: radial-gradient(circle, rgba(41,191,219,0.12) 0%, transparent 70%);
-  top: -100px; right: -80px;
-  border-radius: 50%;
+  top: -100px; right: -80px; border-radius: 50%;
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(41,191,219,0.06) 0%, transparent 70%);
-  bottom: -60px; left: 20%;
-  border-radius: 50%;
-}
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-chip {
-  display: inline-block;
-  background: rgba(41,191,219,0.15);
-  border: 1px solid rgba(41,191,219,0.35);
-  color: var(--teal);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  display: inline-block; background: rgba(41,191,219,0.15); border: 1px solid rgba(41,191,219,0.35);
+  color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px;
 }
-.hero-name {
-  font-size: 42px;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -1px;
-  line-height: 1.05;
-  margin-bottom: 10px;
-}
+.hero-name { font-size: 42px; font-weight: 900; color: #fff; letter-spacing: -1px; line-height: 1.05; margin-bottom: 10px; }
 .hero-name span { color: var(--teal); }
-.hero-role {
-  font-size: 15px;
-  color: rgba(255,255,255,0.55);
-  font-weight: 500;
-  margin-bottom: 36px;
-}
+.hero-role { font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 36px; }
 .hero-role strong { color: rgba(255,255,255,0.85); font-weight: 600; }
-
-/* Stats row */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 8px;
-}
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
 .stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 18px 16px;
-  text-align: center;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 18px 16px; text-align: center;
 }
-.stat-num {
-  font-size: 30px;
-  font-weight: 900;
-  color: var(--teal);
-  letter-spacing: -1px;
-  line-height: 1;
-}
-.stat-label {
-  font-size: 10px;
-  color: rgba(255,255,255,0.45);
-  margin-top: 6px;
-  line-height: 1.4;
-  font-weight: 500;
-}
+.stat-num { font-size: 30px; font-weight: 900; color: var(--teal); letter-spacing: -1px; line-height: 1; }
+.stat-label { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 6px; line-height: 1.4; font-weight: 500; }
 
-/* ── MAIN ─────────────────────────────────────────── */
-.main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 36px 24px 64px;
-}
+/* MAIN */
+.main { max-width: 900px; margin: 0 auto; padding: 36px 24px 64px; }
 
-/* ── SECTION LABEL ────────────────────────────────── */
 .sec-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--teal2);
-  margin-bottom: 16px;
-  margin-top: 36px;
-  padding-left: 2px;
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--teal2); margin-bottom: 16px; margin-top: 36px; padding-left: 2px;
 }
-
-/* ── ABOUT ────────────────────────────────────────── */
+.copy-tip {
+  background: rgba(41,191,219,0.06); border: 1px solid rgba(41,191,219,0.25);
+  border-radius: 8px; padding: 10px 16px; font-size: 11px; color: var(--teal2);
+  font-weight: 600; margin-bottom: 12px;
+}
 .about-card {
-  background: white;
-  border-radius: 14px;
-  padding: 28px 32px;
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: white; border-radius: 14px; padding: 28px 32px;
+  border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-.about-text {
-  font-size: 14px;
-  line-height: 1.85;
-  color: var(--sub);
-  white-space: pre-line;
-}
+.about-text { font-size: 14px; line-height: 1.85; color: var(--sub); white-space: pre-line; }
 .about-text strong { color: var(--text); font-weight: 700; }
 
-/* ── EXPERIENCE ───────────────────────────────────── */
-.exp-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.exp-card {
-  background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.exp-top {
-  display: flex;
-  gap: 0;
-}
-
-.exp-accent {
-  width: 5px;
-  background: var(--teal);
-  flex-shrink: 0;
-}
-
-.exp-body {
-  padding: 24px 28px;
-  flex: 1;
-}
-
-.exp-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 3px;
-  gap: 12px;
-}
-.exp-company {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.4px;
-}
-.exp-period {
-  font-size: 11px;
-  color: var(--muted);
-  font-weight: 500;
-  white-space: nowrap;
-  padding-top: 4px;
-}
-.exp-title {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--teal2);
-  margin-bottom: 2px;
-}
-.exp-loc {
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-
-/* Metrics mini-row */
-.mini-metrics {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
-}
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; gap: 14px; }
+.exp-card { background: white; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.exp-top { display: flex; }
+.exp-accent { width: 5px; flex-shrink: 0; }
+.exp-body { padding: 24px 28px; flex: 1; }
+.exp-meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; gap: 12px; }
+.exp-company { font-size: 20px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; }
+.exp-period { font-size: 11px; color: var(--muted); font-weight: 500; white-space: nowrap; padding-top: 4px; }
+.exp-title { font-size: 12.5px; font-weight: 600; color: var(--teal2); margin-bottom: 2px; }
+.exp-loc { font-size: 11px; color: var(--muted); margin-bottom: 18px; }
+.mini-metrics { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
 .mini-m {
   background: linear-gradient(135deg, rgba(41,191,219,0.08), rgba(41,191,219,0.04));
-  border: 1px solid rgba(41,191,219,0.2);
-  border-radius: 8px;
-  padding: 10px 16px;
-  text-align: center;
-  min-width: 100px;
+  border: 1px solid rgba(41,191,219,0.2); border-radius: 8px; padding: 10px 16px; text-align: center; min-width: 100px;
 }
-.mini-m-num {
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--teal2);
-  letter-spacing: -0.5px;
-  line-height: 1.1;
+.mini-m-num { font-size: 20px; font-weight: 900; color: var(--teal2); letter-spacing: -0.5px; line-height: 1.1; }
+.mini-m-lbl { font-size: 9.5px; color: var(--muted); margin-top: 3px; line-height: 1.3; font-weight: 500; }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.bullets li { font-size: 13px; line-height: 1.65; color: var(--sub); padding-left: 16px; position: relative; }
+.bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 10px; top: 3px; }
+.bullets li strong { color: var(--text); font-weight: 700; }
+.subroles { border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+.subrole-row { display: flex; gap: 12px; align-items: flex-start; }
+.subrole-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 5px; }
+.subrole-title { font-size: 12px; font-weight: 700; color: var(--navy2); }
+.subrole-dates { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+.subrole-bullets { margin-top: 8px; }
+.awards-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.award {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #FFF9E6, #FEFCE8); border: 1px solid #F6CB45;
+  border-radius: 6px; padding: 5px 12px; font-size: 11px; font-weight: 700; color: #92600A;
 }
-.mini-m-lbl {
-  font-size: 9.5px;
-  color: var(--muted);
-  margin-top: 3px;
-  line-height: 1.3;
-  font-weight: 500;
-}
+.notes { background: #FFFBEB; border: 1px solid #F6D860; border-radius: 14px; padding: 22px 28px; }
+.notes-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #92600A; margin-bottom: 14px; }
+.note { font-size: 12.5px; color: #7B4A0A; line-height: 1.65; margin-bottom: 7px; display: flex; gap: 8px; }
 
-/* Bullets */
-.bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-.bullets li {
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--sub);
-  padding-left: 16px;
+/* ═══════════════════════════════════════════════════
+   SECCIÓN REFERENCIA
+════════════════════════════════════════════════════ */
+.ref-divider {
+  margin: 52px 0 0;
+  border: none;
+  border-top: 3px solid var(--navy3);
   position: relative;
 }
-.bullets li::before {
-  content: '▸';
+.ref-divider-label {
   position: absolute;
-  left: 0;
-  color: var(--teal);
-  font-size: 10px;
-  top: 3px;
-}
-.bullets li strong { color: var(--text); font-weight: 700; }
-
-/* Sub-roles */
-.subroles {
-  border-top: 1px solid var(--border);
-  margin-top: 16px;
-  padding-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.subrole-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-.subrole-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--teal);
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-.subrole-info {}
-.subrole-title {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--navy2);
-}
-.subrole-dates {
-  font-size: 10.5px;
-  color: var(--muted);
-  margin-top: 1px;
-}
-.subrole-bullets {
-  margin-top: 8px;
-}
-
-/* Award badge */
-.awards-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.award {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, #FFF9E6, #FEFCE8);
-  border: 1px solid #F6CB45;
-  border-radius: 6px;
-  padding: 5px 12px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #92600A;
-}
-
-/* ── NOTES ────────────────────────────────────────── */
-.notes {
-  background: #FFFBEB;
-  border: 1px solid #F6D860;
-  border-radius: 14px;
-  padding: 22px 28px;
-}
-.notes-title {
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: #EEF2F7;
+  padding: 0 16px;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #92600A;
-  margin-bottom: 14px;
+  color: var(--navy3);
+  white-space: nowrap;
 }
-.note {
-  font-size: 12.5px;
-  color: #7B4A0A;
-  line-height: 1.65;
-  margin-bottom: 7px;
-  display: flex;
-  gap: 8px;
+.ref-section {
+  background: var(--navy2);
+  border-radius: 16px;
+  padding: 36px 36px;
+  margin-top: 32px;
 }
-.note-icon { flex-shrink: 0; }
+.ref-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.ref-title::after { content: ''; flex: 1; height: 1px; background: rgba(41,191,219,0.2); }
 
-/* ── COPY TIP ─────────────────────────────────────── */
-.copy-tip {
-  background: rgba(41,191,219,0.06);
-  border: 1px solid rgba(41,191,219,0.25);
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 11px;
-  color: var(--teal2);
-  font-weight: 600;
-  margin-bottom: 12px;
-  letter-spacing: 0.3px;
+.ref-block { margin-bottom: 32px; }
+.ref-block:last-child { margin-bottom: 0; }
+
+.ref-h { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+
+/* Ref table */
+.ref-table { width: 100%; border-collapse: collapse; }
+.ref-table th {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); padding: 6px 12px; text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ref-table td {
+  font-size: 12px; color: rgba(255,255,255,0.7); padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.5;
+}
+.ref-table td strong { color: var(--teal); font-weight: 700; }
+.ref-table tr:last-child td { border-bottom: none; }
+.ref-table td.num { font-weight: 700; color: #fff; font-size: 13px; }
+.ref-table td.hi { color: var(--teal); font-weight: 700; }
+
+/* Ref cards */
+.ref-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.ref-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 14px 16px; text-align: center;
+}
+.ref-card-num { font-size: 26px; font-weight: 900; color: var(--teal); letter-spacing: -0.5px; }
+.ref-card-sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.4; }
+
+/* Ref clients grid */
+.ref-clients { display: flex; flex-wrap: wrap; gap: 8px; }
+.ref-client {
+  background: rgba(41,191,219,0.08); border: 1px solid rgba(41,191,219,0.2);
+  border-radius: 6px; padding: 5px 12px; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.8);
+}
+.ref-pipeline-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ref-pipeline-item:last-child { border-bottom: none; }
+.ref-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.ref-pipeline-name { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.ref-pipeline-stage { font-size: 10px; color: rgba(255,255,255,0.35); margin-left: auto; }
+.ref-pipeline-country { font-size: 10px; color: rgba(41,191,219,0.7); margin-left: 4px; }
+
+.ref-note {
+  background: rgba(255,255,255,0.03); border-left: 3px solid rgba(41,191,219,0.4);
+  border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: 11.5px;
+  color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 12px;
 }
 
 @media (max-width: 640px) {
@@ -369,7 +190,7 @@ body {
   .stats { grid-template-columns: 1fr 1fr; }
   .stat-num { font-size: 24px; }
   .exp-body { padding: 18px 20px; }
-  .mini-metrics { gap: 8px; }
+  .ref-section { padding: 24px 20px; }
 }
 </style>
 </head>
@@ -380,24 +201,12 @@ body {
   <div class="hero-inner">
     <div class="hero-chip">LinkedIn · Actualizado julio 2026</div>
     <div class="hero-name">Ricardo <span>Astorga</span> Vázquez</div>
-    <div class="hero-role"><strong>Growth Director @ OneCarNow</strong> &nbsp;·&nbsp; Ex Head of Sales LATAM @ Picker Express &nbsp;·&nbsp; 15 años liderando ventas enterprise</div>
+    <div class="hero-role"><strong>Growth Director @ OneCarNow</strong> &nbsp;·&nbsp; Ex Head of Sales LATAM @ Picker Express &nbsp;·&nbsp; 15 años en ventas enterprise</div>
     <div class="stats">
-      <div class="stat">
-        <div class="stat-num">+179%</div>
-        <div class="stat-label">Clientes en 18 meses<br>(341 → 951 tiendas)</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">+144%</div>
-        <div class="stat-label">Récord entregas<br>semanales (15,132)</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">118%</div>
-        <div class="stat-label">Cuota H1 2025<br>(92 vs. 78 plan)</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Países LATAM<br>como único AE</div>
-      </div>
+      <div class="stat"><div class="stat-num">+179%</div><div class="stat-label">Clientes en 18 meses<br>(341 → 951 tiendas)</div></div>
+      <div class="stat"><div class="stat-num">+144%</div><div class="stat-label">Crecimiento mensual<br>de entregas (récord)</div></div>
+      <div class="stat"><div class="stat-num">118%</div><div class="stat-label">Cuota H1 2025<br>(92 vs. 78 plan)</div></div>
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Países LATAM<br>como único AE</div></div>
     </div>
   </div>
 </div>
@@ -406,26 +215,25 @@ body {
 
   <!-- ABOUT -->
   <div class="sec-label">Acerca de — copiar en "About"</div>
-  <div class="copy-tip">📋 Selecciona el texto de abajo y pégalo directo en tu sección About de LinkedIn</div>
+  <div class="copy-tip">📋 Selecciona el texto y pégalo directo en tu sección About de LinkedIn</div>
   <div class="about-card">
     <div class="about-text">Director comercial con <strong>15 años liderando áreas de ventas enterprise en LATAM</strong> — SaaS, fintech, marketplaces y logística.
 
-En Picker Express escalé la operación comercial de 7 países desde cero: construí el pipeline enterprise, cerré 13 cuentas estratégicas y llevé la plataforma a su <strong>récord histórico de entregas (+144% en 18 meses)</strong>. Antes, abrí la vertical de Guatemala para Vana y lideré equipos de hasta 80 personas en Konfío y American Express.
+En Picker Express escalé la operación comercial de 7 países desde cero: construí el pipeline enterprise, cerré 13 cuentas estratégicas y llevé la plataforma a su <strong>récord histórico de entregas (+144% en volumen mensual en 18 meses)</strong>. Antes, abrí la vertical de Guatemala para Vana y lideré equipos de hasta 80 personas en Konfío y American Express.
 
-Me muevo bien entre el trabajo estratégico (definir go-to-market, construir playbooks, estructurar propuestas financieras) y la ejecución directa (prospectar, demostrar, cerrar). Creo que los mejores resultados comerciales vienen de <strong>entender profundo el negocio del cliente antes de vender cualquier cosa</strong>.
+Me muevo bien entre el trabajo estratégico (go-to-market, playbooks, propuestas financieras) y la ejecución directa (prospectar, demostrar, cerrar). Los mejores resultados comerciales vienen de <strong>entender profundo el negocio del cliente antes de vender cualquier cosa</strong>.
 
 Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
   </div>
 
   <!-- EXPERIENCE -->
   <div class="sec-label">Experiencia — copiar por empresa</div>
-
   <div class="exp-list">
 
     <!-- PICKER -->
     <div class="exp-card">
       <div class="exp-top">
-        <div class="exp-accent"></div>
+        <div class="exp-accent" style="background:#29BFDB;"></div>
         <div class="exp-body">
           <div class="exp-meta">
             <div class="exp-company">Picker Express</div>
@@ -435,16 +243,16 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
           <div class="exp-loc">México · LATAM · 7 países</div>
           <div class="mini-metrics">
             <div class="mini-m"><div class="mini-m-num">+179%</div><div class="mini-m-lbl">Tiendas pagadoras</div></div>
-            <div class="mini-m"><div class="mini-m-num">+144%</div><div class="mini-m-lbl">Récord entregas / sem</div></div>
+            <div class="mini-m"><div class="mini-m-num">+144%</div><div class="mini-m-lbl">Entregas mensuales</div></div>
             <div class="mini-m"><div class="mini-m-num">118%</div><div class="mini-m-lbl">Cuota H1 2025</div></div>
             <div class="mini-m"><div class="mini-m-num">25%</div><div class="mini-m-lbl">Demo → cierre</div></div>
           </div>
           <ul class="bullets">
-            <li>Escalé la base de tiendas pagadoras de <strong>341 a 951 en 18 meses (+179%)</strong> como único AE enterprise en 7 países.</li>
-            <li>Alcancé el <strong>récord histórico de la plataforma: 15,132 entregas semanales</strong> en junio 2026 — +144% vs. mi incorporación.</li>
+            <li>Escalé la base de tiendas pagadoras de <strong>341 a 951 en 18 meses (+179%)</strong> como único AE enterprise en 7 países de LATAM.</li>
+            <li>Llevé la plataforma a su <strong>récord histórico de volumen mensual de entregas: +144%</strong> entre mi incorporación (feb 2025) y el pico alcanzado (jun 2026) — de ~27K a más de 65K entregas al mes.</li>
             <li>Superé cuota en H1 2025: <strong>118% de cumplimiento</strong> (92 clientes vs. 78 plan), con picos de 173% en marzo y 164% en junio.</li>
             <li>Cerré <strong>13 cuentas enterprise</strong> — restaurantes, farmacias y distribuidoras en MX, CO, PE, EC y CL — con <strong>25% de conversión demo→cierre</strong>.</li>
-            <li>Construí el playbook comercial desde cero: business cases con ROI, MEDDPICC, propuestas financieras y sistema con IA. Dejé <strong>pipeline activo de 9 deals enterprise</strong>.</li>
+            <li>Construí el playbook comercial desde cero: business cases con ROI, MEDDPICC, propuestas financieras y sistema con IA. Dejé <strong>pipeline activo de 9 deals enterprise</strong> al momento de salida.</li>
           </ul>
         </div>
       </div>
@@ -462,10 +270,10 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
           <div class="exp-title">Director Comercial</div>
           <div class="exp-loc">Guatemala · Remoto</div>
           <div class="mini-metrics">
-            <div class="mini-m" style="border-color:rgba(108,99,255,0.25); background:linear-gradient(135deg,rgba(108,99,255,0.06),rgba(108,99,255,0.02));"><div class="mini-m-num" style="color:#5A52D5;">$1M+</div><div class="mini-m-lbl">USD revenue < 12 meses</div></div>
+            <div class="mini-m" style="border-color:rgba(108,99,255,0.25);background:linear-gradient(135deg,rgba(108,99,255,0.06),rgba(108,99,255,0.02));"><div class="mini-m-num" style="color:#5A52D5;">$1M+</div><div class="mini-m-lbl">USD revenue &lt; 12 meses</div></div>
           </div>
           <ul class="bullets">
-            <li>Abrí la vertical de Guatemala desde cero generando <strong>más de USD 1M en revenue en menos de 12 meses</strong> como primera contratación comercial en el mercado.</li>
+            <li>Abrí la vertical de Guatemala desde cero generando <strong>más de USD 1M en revenue en menos de 12 meses</strong>.</li>
             <li>Diseñé la estrategia completa de go-to-market: segmentación, pricing local, prospección y cierre enterprise.</li>
           </ul>
         </div>
@@ -484,10 +292,10 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
           <div class="exp-title">Head of Growth</div>
           <div class="exp-loc">Guadalajara, México</div>
           <div class="mini-metrics">
-            <div class="mini-m" style="border-color:rgba(47,158,110,0.25); background:linear-gradient(135deg,rgba(47,158,110,0.06),rgba(47,158,110,0.02));"><div class="mini-m-num" style="color:#2F9E6E;">26</div><div class="mini-m-lbl">Clientes · USD 96K ARR</div></div>
+            <div class="mini-m" style="border-color:rgba(47,158,110,0.25);background:linear-gradient(135deg,rgba(47,158,110,0.06),rgba(47,158,110,0.02));"><div class="mini-m-num" style="color:#2F9E6E;">26</div><div class="mini-m-lbl">Clientes · USD 96K ARR</div></div>
           </div>
           <ul class="bullets">
-            <li>Escalé la cartera a <strong>26 clientes activos generando USD 96K ARR</strong> en 10 meses (PropTech LATAM).</li>
+            <li>Escalé la cartera a <strong>26 clientes activos generando USD 96K ARR</strong> en 10 meses en plataforma PropTech LATAM.</li>
             <li>Ejecuté prospección enterprise en México, Colombia y Guatemala.</li>
           </ul>
         </div>
@@ -506,11 +314,11 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
           <div class="exp-title">Director Comercial — Segmento Enterprise</div>
           <div class="exp-loc">Ciudad de México · Fintech unicornio (SoftBank)</div>
           <div class="mini-metrics">
-            <div class="mini-m" style="border-color:rgba(212,135,10,0.25); background:linear-gradient(135deg,rgba(212,135,10,0.06),rgba(212,135,10,0.02));"><div class="mini-m-num" style="color:#D4870A;">80</div><div class="mini-m-lbl">Personas a cargo</div></div>
-            <div class="mini-m" style="border-color:rgba(212,135,10,0.25); background:linear-gradient(135deg,rgba(212,135,10,0.06),rgba(212,135,10,0.02));"><div class="mini-m-num" style="color:#D4870A;">+20%</div><div class="mini-m-lbl">YoY cartera enterprise</div></div>
+            <div class="mini-m" style="border-color:rgba(212,135,10,0.25);background:linear-gradient(135deg,rgba(212,135,10,0.06),rgba(212,135,10,0.02));"><div class="mini-m-num" style="color:#D4870A;">80</div><div class="mini-m-lbl">Personas a cargo</div></div>
+            <div class="mini-m" style="border-color:rgba(212,135,10,0.25);background:linear-gradient(135deg,rgba(212,135,10,0.06),rgba(212,135,10,0.02));"><div class="mini-m-num" style="color:#D4870A;">+20%</div><div class="mini-m-lbl">YoY cartera enterprise</div></div>
           </div>
           <ul class="bullets">
-            <li>Lideré <strong>20 ejecutivos de ventas + 60 teleoperadores</strong> para el segmento enterprise de PyMEs.</li>
+            <li>Lideré <strong>20 ejecutivos de ventas + 60 teleoperadores</strong> para el segmento enterprise de PyMEs en México.</li>
             <li>Logré <strong>+20% de crecimiento YoY</strong> en cartera enterprise sostenido durante 2 años.</li>
           </ul>
         </div>
@@ -529,8 +337,8 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
           <div class="exp-title">Business Development Manager — DiDi Food</div>
           <div class="exp-loc">Ciudad de México</div>
           <div class="mini-metrics">
-            <div class="mini-m" style="border-color:rgba(232,67,147,0.25); background:linear-gradient(135deg,rgba(232,67,147,0.06),rgba(232,67,147,0.02));"><div class="mini-m-num" style="color:#C7337D;">350+</div><div class="mini-m-lbl">Restaurantes / mes</div></div>
-            <div class="mini-m" style="border-color:rgba(232,67,147,0.25); background:linear-gradient(135deg,rgba(232,67,147,0.06),rgba(232,67,147,0.02));"><div class="mini-m-num" style="color:#C7337D;">35%</div><div class="mini-m-lbl">Adquisición total MX</div></div>
+            <div class="mini-m" style="border-color:rgba(232,67,147,0.25);background:linear-gradient(135deg,rgba(232,67,147,0.06),rgba(232,67,147,0.02));"><div class="mini-m-num" style="color:#C7337D;">350+</div><div class="mini-m-lbl">Restaurantes / mes</div></div>
+            <div class="mini-m" style="border-color:rgba(232,67,147,0.25);background:linear-gradient(135deg,rgba(232,67,147,0.06),rgba(232,67,147,0.02));"><div class="mini-m-num" style="color:#C7337D;">35%</div><div class="mini-m-lbl">Adquisición total MX</div></div>
           </div>
           <ul class="bullets">
             <li>Incorporé <strong>350+ restaurantes al mes</strong> a DiDi Food, representando el <strong>35% de la adquisición total</strong> de la compañía en México.</li>
@@ -549,7 +357,7 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
             <div class="exp-period">abr 2013 – sep 2019 &nbsp;·&nbsp; 6 a 6 m</div>
           </div>
           <div class="exp-loc">Ciudad de México</div>
-          <div class="awards-row">
+          <div class="awards-row" style="margin-bottom:16px;">
             <div class="award">🏆 Global President's Award 2018 · Toronto</div>
             <div class="award">🏆 Global President's Award 2015 · Nueva York</div>
           </div>
@@ -557,8 +365,7 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
             <div class="subrole-row">
               <div class="subrole-dot"></div>
               <div class="subrole-info">
-                <div class="subrole-title">Telemarketing Manager</div>
-                <div class="subrole-dates">dic 2015 – sep 2019</div>
+                <div class="subrole-title">Telemarketing Manager &nbsp;<span style="font-weight:400;color:var(--muted);font-size:10px;">dic 2015 – sep 2019</span></div>
                 <ul class="bullets subrole-bullets">
                   <li>Lideré <strong>300 asesores</strong> en ventas de productos financieros premium con <strong>+20% YoY</strong> sostenido.</li>
                   <li>Ganador del <strong>Global President's Award 2018</strong> (Toronto) y <strong>2015</strong> (Nueva York) — máximo reconocimiento global de American Express.</li>
@@ -568,15 +375,13 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
             <div class="subrole-row">
               <div class="subrole-dot" style="background:var(--border);"></div>
               <div class="subrole-info">
-                <div class="subrole-title">Digital Marketing Coordinator</div>
-                <div class="subrole-dates">[confirmar fechas]</div>
+                <div class="subrole-title" style="font-weight:500;">Digital Marketing Coordinator &nbsp;<span style="font-weight:400;color:var(--muted);font-size:10px;">[confirmar fechas]</span></div>
               </div>
             </div>
             <div class="subrole-row">
               <div class="subrole-dot" style="background:var(--border);"></div>
               <div class="subrole-info">
-                <div class="subrole-title">Sales Analyst</div>
-                <div class="subrole-dates">abr 2013 – [confirmar]</div>
+                <div class="subrole-title" style="font-weight:500;">Sales Analyst &nbsp;<span style="font-weight:400;color:var(--muted);font-size:10px;">abr 2013 – [confirmar]</span></div>
               </div>
             </div>
           </div>
@@ -587,15 +392,136 @@ Actualmente: Growth Director en OneCarNow (OCN), operando en México.</div>
   </div>
 
   <!-- NOTES -->
-  <div class="sec-label">Antes de publicar</div>
+  <div class="sec-label">Checklist final</div>
   <div class="notes">
-    <div class="notes-title">Checklist final</div>
-    <div class="note"><span class="note-icon">✂️</span><span><strong>Quitar de LinkedIn:</strong> Telfin (oct–feb 2024) y Lottus Education — ya no van en LinkedIn, solo Telfin se queda en el CV bajo "Experiencia Adicional".</span></div>
-    <div class="note"><span class="note-icon">📌</span><span><strong>Confirmar fechas</strong> de roles junior en American Express (Sales Analyst y Digital Mktg Coordinator).</span></div>
-    <div class="note"><span class="note-icon">🆕</span><span><strong>Agregar OCN</strong> desde el 3 de agosto como Growth Director (confirmar título exacto con Sergio).</span></div>
-    <div class="note"><span class="note-icon">🔝</span><span><strong>Orden de edición:</strong> About → Picker → Vana/Alohome → AmEx con Awards.</span></div>
+    <div class="notes-title">Antes de publicar en LinkedIn</div>
+    <div class="note"><span>✂️</span><span><strong>Quitar de LinkedIn:</strong> Telfin (oct 2023 – feb 2024) y Lottus Education. Telfin se queda en el CV bajo "Experiencia Adicional" pero no va en LinkedIn.</span></div>
+    <div class="note"><span>📌</span><span><strong>Confirmar fechas</strong> de Sales Analyst y Digital Marketing Coordinator en AmEx.</span></div>
+    <div class="note"><span>🆕</span><span><strong>Agregar OCN</strong> desde el 3 de agosto como Growth Director (confirmar título exacto con Sergio).</span></div>
+    <div class="note"><span>🔝</span><span><strong>Orden de edición:</strong> About → Picker → Vana/Alohome → AmEx con Awards.</span></div>
   </div>
 
-</div>
+  <!-- ════════════════════════════════════════════════
+       SECCIÓN DE REFERENCIA — RAW DATA
+  ═══════════════════════════════════════════════════ -->
+  <hr class="ref-divider"><span class="ref-divider-label">datos de referencia — solo para consulta</span>
+
+  <div class="ref-section">
+
+    <!-- DASHBOARD SALIDA -->
+    <div class="ref-title">Dashboard al momento de salida (julio 2026)</div>
+    <div class="ref-block">
+      <div class="ref-cards">
+        <div class="ref-card"><div class="ref-card-num">≥$383K</div><div class="ref-card-sub">Revenue mensual USD</div></div>
+        <div class="ref-card"><div class="ref-card-num">≥132K</div><div class="ref-card-sub">Entregas mensuales (todos los servicios)</div></div>
+        <div class="ref-card"><div class="ref-card-num">502</div><div class="ref-card-sub">Paying stores (fijas)</div></div>
+        <div class="ref-card"><div class="ref-card-num">951</div><div class="ref-card-sub">Paying stores (total)</div></div>
+      </div>
+    </div>
+
+    <!-- CHART DATA -->
+    <div class="ref-title">Weekly bookings — puntos clave del chart</div>
+    <div class="ref-block">
+      <table class="ref-table">
+        <thead><tr><th>Semana</th><th>Fecha</th><th>Fulfilled (azul)</th><th># Businesses</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td>Entrada (est.)</td><td>feb 2025</td><td class="num">~6,200</td><td>~600 est.</td><td>Punto de inicio de Ricardo</td></tr>
+          <tr><td>W30 2025</td><td>21 jul 2025</td><td class="num">7,123</td><td class="num">777</td><td>Hace 1 año exacto</td></tr>
+          <tr><td class="hi">W25 2026 — RÉCORD</td><td class="hi">15 jun 2026</td><td class="hi">15,132</td><td class="hi">1,332</td><td class="hi">Máximo histórico · Trend 4w: 14,300</td></tr>
+          <tr><td>W30 2026</td><td>31 jul 2026</td><td class="num">13,020</td><td>—</td><td>Semana de salida</td></tr>
+        </tbody>
+      </table>
+      <div class="ref-note">⚠️ El fulfilled (azul) es solo el segmento principal de entregas. El total mensual del dashboard (≥132K) incluye todas las líneas del chart. El ratio entrada→récord se calcula sobre la línea azul.</div>
+    </div>
+
+    <!-- MENSUAL ESTIMADO -->
+    <div class="ref-title">Volumen mensual estimado (para CV y conversaciones)</div>
+    <div class="ref-block">
+      <table class="ref-table">
+        <thead><tr><th>Momento</th><th>Weekly azul</th><th>Mensual estimado (×4.33)</th><th>Crecimiento</th></tr></thead>
+        <tbody>
+          <tr><td>Entrada feb 2025</td><td>~6,200</td><td class="num">~26,800 / mes</td><td>—</td></tr>
+          <tr><td>W30 2025 (hace 1 año)</td><td>7,123</td><td class="num">~30,800 / mes</td><td>—</td></tr>
+          <tr><td class="hi">Récord jun 2026</td><td class="hi">15,132</td><td class="hi">~65,500 / mes</td><td class="hi">+144% vs entrada</td></tr>
+          <tr><td>Dashboard jul 2026 (todos los servicios)</td><td>—</td><td class="num">≥132,000 / mes</td><td>Dato oficial</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PLAN 2025 H1 -->
+    <div class="ref-title">Performance H1 2025 — Plan vs Real (imagen compartida)</div>
+    <div class="ref-block">
+      <table class="ref-table">
+        <thead><tr><th>Métrica</th><th>Ene</th><th>Feb</th><th>Mar</th><th>Abr</th><th>May</th><th>Jun</th><th>Jul</th><th>Total / Prom</th></tr></thead>
+        <tbody>
+          <tr><td>BDRs Plan</td><td>4</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>—</td></tr>
+          <tr><td>BDRs Real</td><td>4</td><td>5</td><td>5</td><td>5</td><td>3</td><td>4</td><td>3</td><td>—</td></tr>
+          <tr><td>Clientes Plan</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>78</td></tr>
+          <tr><td>Clientes Real</td><td>7</td><td>12</td><td>19</td><td>10</td><td>10</td><td>18</td><td>16</td><td class="hi">92</td></tr>
+          <tr><td>% Cuota clientes</td><td>62%</td><td>109%</td><td class="hi">173%</td><td>88%</td><td>91%</td><td class="hi">164%</td><td class="hi">141%</td><td class="hi">118%</td></tr>
+          <tr><td>Locales Plan</td><td>34</td><td>33</td><td>33</td><td>34</td><td>33</td><td>33</td><td>34</td><td>234</td></tr>
+          <tr><td>Locales Real</td><td>47</td><td>29</td><td>36</td><td>11</td><td>25</td><td>20</td><td>31</td><td>199</td></tr>
+          <tr><td>SaaS Paying Stores</td><td>328</td><td class="hi">341</td><td>367</td><td>389</td><td>391</td><td>396</td><td>368</td><td>—</td></tr>
+          <tr><td>Churn</td><td>5.3%</td><td>6.4%</td><td>5.0%</td><td>3.0%</td><td>3.3%</td><td>6.2%</td><td>9.8%</td><td>5.6%</td></tr>
+        </tbody>
+      </table>
+      <div class="ref-note">📌 Paying Stores en feb 2025 = 341 → número de referencia para calcular crecimiento durante el tenure. SaaS Revenue de esta imagen NO es confiable (son estimados internos) — usar solo los Paying Stores.</div>
+    </div>
+
+    <!-- CLIENTES CERRADOS -->
+    <div class="ref-title">Clientes enterprise cerrados (13 total · ~80% contratos firmados)</div>
+    <div class="ref-block">
+      <div class="ref-clients">
+        <span class="ref-client">CEBA · MX</span>
+        <span class="ref-client">Pizza Hut / Jeno's · MX</span>
+        <span class="ref-client">Ventolini · CO</span>
+        <span class="ref-client">Niu Sushi · MX</span>
+        <span class="ref-client">Niu Sushi · CL</span>
+        <span class="ref-client">Pastelerías Marisa · MX</span>
+        <span class="ref-client">Taquería Keyon · MX</span>
+        <span class="ref-client">Salvator's Pizza & Pasta · CO</span>
+        <span class="ref-client">Grupo Nutresa (PJ + El Corral) · CO</span>
+        <span class="ref-client">Droguerías 9192 · CO</span>
+        <span class="ref-client">Coopidrogas · CO</span>
+        <span class="ref-client">Grupo Nikkori · MX</span>
+        <span class="ref-client">Mansura · EC</span>
+      </div>
+      <div class="ref-note">~80% con contrato firmado · ~20% acuerdo oficial en proceso de firma al momento de salida.</div>
+    </div>
+
+    <!-- PIPELINE ACTIVO -->
+    <div class="ref-title">Pipeline activo al momento de salida (9 deals)</div>
+    <div class="ref-block">
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Coopidrogas</div><span class="ref-pipeline-country">CO</span><div class="ref-pipeline-stage">Procurement</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Encebollados CDL</div><span class="ref-pipeline-country">EC</span><div class="ref-pipeline-stage">Procurement</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Grupo Nikkori</div><span class="ref-pipeline-country">MX</span><div class="ref-pipeline-stage">Procurement</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Salvator's Pizza & Pasta</div><span class="ref-pipeline-country">CO</span><div class="ref-pipeline-stage">Negotiation</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Droguerías 9192</div><span class="ref-pipeline-country">CO</span><div class="ref-pipeline-stage">Pilot Definition</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Papa John's &amp; El Corral (Nutresa)</div><span class="ref-pipeline-country">CO</span><div class="ref-pipeline-stage">Proposal</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Cruz Verde + Maicao</div><span class="ref-pipeline-country">CL</span><div class="ref-pipeline-stage">Proposal</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">MacStore</div><span class="ref-pipeline-country">MX</span><div class="ref-pipeline-stage">Intro Meeting</div></div>
+      <div class="ref-pipeline-item"><div class="ref-dot"></div><div class="ref-pipeline-name">Salchimonster</div><span class="ref-pipeline-country">CO</span><div class="ref-pipeline-stage">Intro Meeting</div></div>
+    </div>
+
+    <!-- CÁLCULOS DERIVADOS -->
+    <div class="ref-title">Cálculos clave (para usar en CV, entrevistas, OCN)</div>
+    <div class="ref-block">
+      <table class="ref-table">
+        <thead><tr><th>Métrica</th><th>Cálculo</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Crecimiento paying stores (tenure)</td><td>341 → 951</td><td class="hi">+179%</td></tr>
+          <tr><td>Crecimiento mensual entregas (entrada → récord)</td><td>~26,800 → ~65,500 / mes</td><td class="hi">+144%</td></tr>
+          <tr><td>YoY entregas (W30 2025 → récord W25 2026)</td><td>7,123 → 15,132 / semana</td><td class="hi">+113%</td></tr>
+          <tr><td>Crecimiento businesses en red</td><td>777 → 1,332</td><td class="hi">+71% YoY</td></tr>
+          <tr><td>Cuota H1 2025</td><td>92 reales vs 78 plan</td><td class="hi">118%</td></tr>
+          <tr><td>Clientes enterprise cerrados</td><td>13 total</td><td class="hi">~10 firmados</td></div></tr>
+          <tr><td>Pipeline dejado al salir</td><td>9 deals activos</td><td class="hi">3 en Procurement</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /ref-section -->
+
+</div><!-- /main -->
 </body>
 </html>
